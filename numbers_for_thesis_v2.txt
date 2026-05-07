@@ -1,7 +1,3 @@
-================================================================
-  THESIS NUMBERS — bivariate VAR with COVID dummy in P2
-  Generated: 2026-05-05 22:09:43.674738 
-================================================================
 
 ### 0. SPECIFICATION ###
 Endogenous: Brent log-returns, ICLN log-returns
