@@ -1,0 +1,231 @@
+================================================================
+  THESIS NUMBERS — bivariate VAR with COVID dummy in P2
+  Generated: 2026-05-05 22:09:43.674738 
+================================================================
+
+### 0. SPECIFICATION ###
+Endogenous: Brent log-returns, ICLN log-returns
+Exogen P1:  none
+Exogen P2:  COVID dummy (1 for 2020-03-01..2020-12-31)
+Cholesky:   Brent first, ICLN second
+AIC P1=1, AIC P2=7, common lag=7
+
+### 1. SAMPLE SIZES ###
+P1 prices N=1304   returns N=1304
+P2 prices N=784   returns N=784
+COVID active: 219 / 784 (27.9%)
+
+### 2. DESCRIPTIVE STATS - LEVELS (Table 1) ###
+  Oil 2013-17        N=1304 mean=  72.325 sd= 27.697 min=  27.880 max= 118.900 skew= 0.397
+  ICLN 2013-17       N=1304 mean=   9.610 sd=  1.265 min=   7.150 max=  13.020 skew= 0.425
+  Oil 2019-21        N= 784 mean=  59.416 sd= 14.163 min=  19.330 max=  86.400 skew=-0.622
+  ICLN 2019-21       N= 784 mean=  16.623 sd=  6.586 min=   8.250 max=  33.410 skew= 0.492
+
+### 3. DESCRIPTIVE STATS - LOG RETURNS (Table 2) ###
+  Oil 2013-17        N=1304 mean=-0.000392 sd= 0.0200 min= -0.1029 max=  0.1042 exc.kurt=  4.022
+  ICLN 2013-17       N=1304 mean= 0.000201 sd= 0.0131 min= -0.0529 max=  0.0503 exc.kurt=  1.471
+  Oil 2019-21        N= 784 mean= 0.000495 sd= 0.0301 min= -0.2798 max=  0.1908 exc.kurt= 22.875
+  ICLN 2019-21       N= 784 mean= 0.001203 sd= 0.0205 min= -0.1371 max=  0.1080 exc.kurt=  8.650
+
+### 4. CORRELATIONS ###
+P1 r(Brent,ICLN) = 0.3014
+P2 r(Brent,ICLN) = 0.2954
+
+### 5. ADF ###
+On levels:
+  Oil P1 (level)         ADF= -0.620 p=0.9764
+  ICLN P1 (level)        ADF= -2.600 p=0.3243
+  Oil P2 (level)         ADF= -1.356 p=0.8510
+  ICLN P2 (level)        ADF= -1.642 p=0.7300
+On returns:
+  Oil P1 (returns)       ADF=-10.243 p=0.0100
+  ICLN P1 (returns)      ADF=-10.497 p=0.0100
+  Oil P2 (returns)       ADF= -8.199 p=0.0100
+  ICLN P2 (returns)      ADF= -7.715 p=0.0100
+
+### 6. VAR P1 (Table 3) ###
+--- P1 :: Brent ---
+  Brent.l1     est= -0.09267 se= 0.02925 t= -3.168 p=0.0016
+  ICLN.l1      est=  0.06328 se= 0.04481 t=  1.412 p=0.1581
+  Brent.l2     est=  0.03131 se= 0.02937 t=  1.066 p=0.2866
+  ICLN.l2      est=  0.02425 se= 0.04482 t=  0.541 p=0.5885
+  Brent.l3     est=  0.00392 se= 0.02937 t=  0.134 p=0.8938
+  ICLN.l3      est=  0.03129 se= 0.04479 t=  0.699 p=0.4850
+  Brent.l4     est=  0.01386 se= 0.02939 t=  0.472 p=0.6373
+  ICLN.l4      est= -0.05189 se= 0.04465 t= -1.162 p=0.2454
+  Brent.l5     est=  0.00603 se= 0.02937 t=  0.205 p=0.8374
+  ICLN.l5      est= -0.05608 se= 0.04478 t= -1.252 p=0.2107
+  Brent.l6     est=  0.02543 se= 0.02938 t=  0.865 p=0.3869
+  ICLN.l6      est=  0.03978 se= 0.04471 t=  0.890 p=0.3737
+  Brent.l7     est=  0.01827 se= 0.02927 t=  0.624 p=0.5325
+  ICLN.l7      est= -0.06831 se= 0.04471 t= -1.528 p=0.1268
+  const        est= -0.00039 se= 0.00056 t= -0.704 p=0.4813
+  F=  1.513 on (14,1282) p=0.09897  R2=0.0163  AdjR2=0.0055
+
+--- P1 :: ICLN ---
+  Brent.l1     est=  0.00142 se= 0.01907 t=  0.074 p=0.9407
+  ICLN.l1      est=  0.03711 se= 0.02921 t=  1.270 p=0.2042
+  Brent.l2     est=  0.02281 se= 0.01914 t=  1.192 p=0.2336
+  ICLN.l2      est= -0.01092 se= 0.02922 t= -0.374 p=0.7086
+  Brent.l3     est=  0.00127 se= 0.01915 t=  0.067 p=0.9470
+  ICLN.l3      est=  0.00216 se= 0.02920 t=  0.074 p=0.9411
+  Brent.l4     est=  0.00261 se= 0.01916 t=  0.136 p=0.8918
+  ICLN.l4      est= -0.08762 se= 0.02911 t= -3.010 p=0.0027
+  Brent.l5     est= -0.02805 se= 0.01915 t= -1.465 p=0.1431
+  ICLN.l5      est=  0.00597 se= 0.02919 t=  0.205 p=0.8380
+  Brent.l6     est=  0.00780 se= 0.01915 t=  0.407 p=0.6839
+  ICLN.l6      est=  0.03883 se= 0.02914 t=  1.332 p=0.1830
+  Brent.l7     est=  0.03468 se= 0.01908 t=  1.818 p=0.0693
+  ICLN.l7      est= -0.03364 se= 0.02914 t= -1.154 p=0.2485
+  const        est=  0.00019 se= 0.00036 t=  0.511 p=0.6097
+  F=  1.509 on (14,1282) p=0.1004  R2=0.0162  AdjR2=0.0055
+
+### 7. VAR P2 (Table 4, with COVID) ###
+--- P2 main :: Brent ---
+  Brent.l1     est=  0.10714 se= 0.03775 t=  2.838 p=0.0047
+  ICLN.l1      est= -0.07617 se= 0.05752 t= -1.324 p=0.1859
+  Brent.l2     est= -0.03520 se= 0.03785 t= -0.930 p=0.3526
+  ICLN.l2      est=  0.12217 se= 0.05659 t=  2.159 p=0.0312
+  Brent.l3     est=  0.00994 se= 0.03792 t=  0.262 p=0.7932
+  ICLN.l3      est= -0.07636 se= 0.05700 t= -1.340 p=0.1808
+  Brent.l4     est=  0.02018 se= 0.03831 t=  0.527 p=0.5984
+  ICLN.l4      est=  0.07996 se= 0.05683 t=  1.407 p=0.1598
+  Brent.l5     est=  0.04677 se= 0.03825 t=  1.223 p=0.2218
+  ICLN.l5      est= -0.04547 se= 0.05608 t= -0.811 p=0.4177
+  Brent.l6     est= -0.05711 se= 0.03825 t= -1.493 p=0.1359
+  ICLN.l6      est=  0.10866 se= 0.05563 t=  1.953 p=0.0511
+  Brent.l7     est= -0.00935 se= 0.03857 t= -0.242 p=0.8085
+  ICLN.l7      est=  0.14596 se= 0.05584 t=  2.614 p=0.0091
+  const        est=  0.00023 se= 0.00126 t=  0.185 p=0.8530
+  COVID        est= -0.00089 se= 0.00243 t= -0.367 p=0.7139
+  F=  2.403 on (15,761) p=0.002072  R2=0.0452  AdjR2=0.0264
+
+--- P2 main :: ICLN ---
+  Brent.l1     est= -0.00265 se= 0.02477 t= -0.107 p=0.9150
+  ICLN.l1      est= -0.02576 se= 0.03775 t= -0.682 p=0.4953
+  Brent.l2     est=  0.03412 se= 0.02484 t=  1.374 p=0.1699
+  ICLN.l2      est=  0.12085 se= 0.03714 t=  3.254 p=0.0012
+  Brent.l3     est=  0.11033 se= 0.02489 t=  4.433 p=0.0000
+  ICLN.l3      est= -0.01200 se= 0.03741 t= -0.321 p=0.7484
+  Brent.l4     est=  0.01829 se= 0.02514 t=  0.728 p=0.4671
+  ICLN.l4      est= -0.05314 se= 0.03730 t= -1.425 p=0.1546
+  Brent.l5     est=  0.04573 se= 0.02510 t=  1.822 p=0.0689
+  ICLN.l5      est= -0.00601 se= 0.03680 t= -0.163 p=0.8703
+  Brent.l6     est= -0.11428 se= 0.02510 t= -4.552 p=0.0000
+  ICLN.l6      est= -0.04212 se= 0.03651 t= -1.154 p=0.2489
+  Brent.l7     est=  0.03854 se= 0.02532 t=  1.522 p=0.1283
+  ICLN.l7      est=  0.07491 se= 0.03665 t=  2.044 p=0.0413
+  const        est=  0.00004 se= 0.00083 t=  0.044 p=0.9652
+  COVID        est=  0.00351 se= 0.00159 t=  2.206 p=0.0277
+  F=  6.566 on (15,761) p=2.294e-13  R2=0.1146  AdjR2=0.0971
+
+### 8. ROBUSTNESS — P2 without COVID dummy ###
+  Brent eq AdjR2 = 0.0275
+  ICLN eq  AdjR2 = 0.0926
+
+### 9. GRANGER CAUSALITY (Wald) ###
+  P1: Oil->ICLN                  F=  1.012 df=(7,2564) p=0.4207
+  P1: ICLN->Oil                  F=  1.292 df=(7,2564) p=0.2499
+  P2: Oil->ICLN                  F=  7.246 df=(7,1522) p=0.0000
+  P2: ICLN->Oil                  F=  3.524 df=(7,1522) p=0.0009
+Robustness P2 NC:
+  P2 NC: Oil->ICLN               F=  7.107 df=(7,1524) p=0.0000
+  P2 NC: ICLN->Oil               F=  3.510 df=(7,1524) p=0.0010
+
+### 10. DIAGNOSTICS (Table 6) ###
+--- P1 ---
+  Portmanteau adj: chi2=49.645 df=36 p=0.0646
+  ARCH-LM mv:      chi2=299.022 df=45 p=0
+  JB mv:           chi2=943.114 df=4 p=0
+  Ljung-Box (10) Brent: Q=10.080 p=0.4335
+  Ljung-Box (10) ICLN : Q=4.369 p=0.9291
+
+--- P2 main (with COVID) ---
+  Portmanteau adj: chi2=44.710 df=36 p=0.1513
+  ARCH-LM mv:      chi2=328.645 df=45 p=0
+  JB mv:           chi2=12814.126 df=4 p=0
+  Ljung-Box (10) Brent: Q=0.488 p=1
+  Ljung-Box (10) ICLN : Q=7.830 p=0.6454
+
+### 11. CUMULATIVE IRF ###
+P1 peak = 0.00460
+P2 peak = 0.01283
+ratio   = 2.79
+P1 final h=20 = 0.00454
+P2 final h=20 = 0.01089
+
+Full P1:
+ [1] 0.00391 0.00408 0.00450 0.00451 0.00424 0.00367 0.00398 0.00453 0.00454 0.00460 0.00457 0.00450
+[13] 0.00453 0.00455 0.00454 0.00455 0.00454 0.00454 0.00454 0.00455 0.00454
+
+Full P2:
+ [1] 0.00572 0.00549 0.00720 0.01044 0.01111 0.01283 0.00921 0.01075 0.01035 0.01052 0.01084 0.01059
+[13] 0.01127 0.01077 0.01118 0.01090 0.01094 0.01093 0.01087 0.01103 0.01089
+
+### 12. ROBUSTNESS — P2 without COVID dummy ###
+P2 NC peak = 0.01268  (main=0.01283)
+P2/P1 NC   = 2.76  (main=2.79)
+
+### 13. FEVD ICLN (Tables 7, 8) ###
+P1 main:
+      Brent   ICLN
+[1,] 0.0897 0.9103
+[2,] 0.0897 0.9103
+[3,] 0.0906 0.9094
+[4,] 0.0906 0.9094
+[5,] 0.0904 0.9096
+
+P2 main:
+      Brent   ICLN
+[1,] 0.0855 0.9145
+[2,] 0.0855 0.9145
+[3,] 0.0912 0.9088
+[4,] 0.1150 0.8850
+[5,] 0.1158 0.8842
+
+P2 NC (robustness):
+      Brent   ICLN
+[1,] 0.0843 0.9157
+[2,] 0.0844 0.9156
+[3,] 0.0898 0.9102
+[4,] 0.1131 0.8869
+[5,] 0.1139 0.8861
+
+### 14. AIC/BIC scan (1..15) ###
+--- P1 ---
+  p= 1 AIC= -16.5864 BIC= -16.5625
+  p= 2 AIC= -16.5853 BIC= -16.5456
+  p= 3 AIC= -16.5797 BIC= -16.5241
+  p= 4 AIC= -16.5801 BIC= -16.5085
+  p= 5 AIC= -16.5759 BIC= -16.4884
+  p= 6 AIC= -16.5715 BIC= -16.4679
+  p= 7 AIC= -16.5699 BIC= -16.4503
+  p= 8 AIC= -16.5701 BIC= -16.4346
+  p= 9 AIC= -16.5661 BIC= -16.4145
+  p=10 AIC= -16.5646 BIC= -16.3969
+  p=11 AIC= -16.5592 BIC= -16.3754
+  p=12 AIC= -16.5612 BIC= -16.3613
+  p=13 AIC= -16.5569 BIC= -16.3409
+  p=14 AIC= -16.5504 BIC= -16.3183
+  p=15 AIC= -16.5476 BIC= -16.2993
+
+--- P2 (with COVID) ---
+  p= 1 AIC= -14.8728 BIC= -14.8371
+  p= 2 AIC= -14.8894 BIC= -14.8298
+  p= 3 AIC= -14.9190 BIC= -14.8355
+  p= 4 AIC= -14.9205 BIC= -14.8130
+  p= 5 AIC= -14.9133 BIC= -14.7818
+  p= 6 AIC= -14.9432 BIC= -14.7876
+  p= 7 AIC= -14.9507 BIC= -14.7709
+  p= 8 AIC= -14.9416 BIC= -14.7377
+  p= 9 AIC= -14.9310 BIC= -14.7029
+  p=10 AIC= -14.9257 BIC= -14.6733
+  p=11 AIC= -14.9187 BIC= -14.6419
+  p=12 AIC= -14.9135 BIC= -14.6124
+  p=13 AIC= -14.9137 BIC= -14.5882
+  p=14 AIC= -14.9096 BIC= -14.5596
+  p=15 AIC= -14.9035 BIC= -14.5290
+
+================================================================
+  END
+================================================================
